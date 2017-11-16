@@ -3,11 +3,6 @@ from django.template import loader
 from . import helper
 from django.views.decorators.csrf import csrf_exempt
 
-def demo(request):
-	template = loader.get_template('demo/index.html')
-	context = {}
-	return HttpResponse(template.render(context, request))
-
 @csrf_exempt
 def indexNotation(request):
 	try:
