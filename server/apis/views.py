@@ -1,7 +1,14 @@
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
+from django.template import loader
 from . import helper
 from django.views.decorators.csrf import csrf_exempt
 
+def demo(request):
+	template = loader.get_template('demo/index.html')
+	context = {}
+	return HttpResponse(template.render(context, request))
+
+@csrf_exempt
 def indexNotation(request):
 	try:
 		notation = helper.gen_notation(request)
@@ -19,6 +26,7 @@ def indexNotation(request):
 	res = helper.gen_success(msg)
 	return JsonResponse(res)
 
+@csrf_exempt
 def queryLatex(request):
 	try:
 		query = helper.gen_expression_query(request)
