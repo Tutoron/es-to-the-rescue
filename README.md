@@ -1,6 +1,6 @@
 # ES to the rescue
 
-## API
+## Django server API
 
 replace `{endpoint}` with your local port
 
@@ -13,6 +13,13 @@ replace `{endpoint}` with your local port
 * [Python3](https://www.python.org/)
 * elastic search is excluded from the repo, but it is required. [Download elastic search](https://www.elastic.co/)
 * Meteor [Download](https://www.meteor.com/)
+
+## Tech stack
+
+* [Django](https://www.djangoproject.com/)
+* [Meteor](https://www.meteor.com/)
+* [elastic search](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
+* [React.js](https://reactjs.org/)
 
 ## Test locally
 
