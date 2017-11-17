@@ -9,16 +9,27 @@ replace `{endpoint}` with your local port
 
 ## Prerequisites
 
-* Recent version of java environment
-* Python3
-* elastic search is excluded from the repo, but it is required.
+* Recent version of java environment [JDK download](http://www.oracle.com/technetwork/java/javase/downloads/jdk6-jsp-136632.html)
+* [Python3](https://www.python.org/)
+* elastic search is excluded from the repo, but it is required. [Download elastic search](https://www.elastic.co/)
+* Meteor [Download](https://www.meteor.com/)
 
-## Test Locally
+## Test locally
 
-`pip3 install -r requirements.txt`
+### Start elastic search server
 
-start elasticsearch server
+`./bin/elasticsearch`
 
-`python3 server/manage.py runserver`
+### Start django server
+
+`pip3 install -r requirements.txt` to install python dependencies
+
+`python3 server/manage.py runserver` to start server
 
 Do `python3 server/manage.py migrate` if necessary.
+
+### Start demo app
+
+`meteor npm install` to install npm modules
+
+`meteor` to start app
