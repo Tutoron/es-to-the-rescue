@@ -33,7 +33,11 @@ replace `{endpoint}` with your local port
 
 ### Start elastic search server
 
-`./bin/elasticsearch`
+[Download](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html) and unzip the Elasticsearch official distribution.
+
+Run `bin/elasticsearch` on unix, or `bin\elasticsearch.bat` on windows.
+
+Run `curl -X GET http://localhost:9200/`
 
 ### Start django server
 
