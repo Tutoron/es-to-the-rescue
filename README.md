@@ -6,6 +6,10 @@
 
 <img alt="High level structure" src="https://raw.githubusercontent.com/tianhaoz95/pics/master/Blank%20Diagram%20-%20Page%201%20(1).png"/>
 
+### Demo app structure
+
+<img alt="Demo app structure" src="https://raw.githubusercontent.com/tianhaoz95/pics/master/Blank%20Diagram%20-%20Page%201%20(2).png"/>
+
 ## Django server API
 
 replace `{endpoint}` with your local port
