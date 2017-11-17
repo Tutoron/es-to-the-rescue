@@ -23,6 +23,7 @@ replace `{endpoint}` with your local port
 * [Python3](https://www.python.org/)
 * elastic search is excluded from the repo, but it is required. [Download elastic search](https://www.elastic.co/)
 * Meteor [Download](https://www.meteor.com/)
+* Node.js [Download](https://nodejs.org/en/)
 
 ## Tech stack
 
