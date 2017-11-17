@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import Item from './Item'
+import Explaination from './explainations/index'
 
 var empty = {
 	type: 'notation',
 	payload: null
 }
 
-// TODO there should be a drop down for adding new field
 export default class SideBar extends Component {
 	constructor(props) {
 		super(props)
@@ -17,7 +16,7 @@ export default class SideBar extends Component {
 			<div>
 				SideBar
 				{this.props.list.map((item, index) => (
-					<Item item={item} key={index} default='view' />
+					<Explaination item={item} key={index} />
 				))}
 			</div>
 		)
