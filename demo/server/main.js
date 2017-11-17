@@ -11,11 +11,13 @@ Meteor.startup(() => {
 Meteor.methods({
 	queryLatex(expression) {
 		var params = {expression: expression}
-		try {
-			const res = HTTP.call('GET', queryLatexEndpoint, {params: params})
-		} catch (e) {
-			return null
-		}
-		return res
+		var req = Meteor.wrapAsync(HTTP.get)
+		var res = req(queryLatexEndpoint, {params: params})
+		// TODO: check if res status is success, throw exception if failed
+		return res.data
+	},
+	indexNotation(id, expression, context, explaination) {
+		// TODO: send notation to server API and check if success
+		return null
 	}
 })
