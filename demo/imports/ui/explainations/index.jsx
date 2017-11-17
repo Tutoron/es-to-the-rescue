@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Definition from './definition/index'
 import Visualization from './visualization/index'
+import Partition from './partition/index'
 
 export default class Explainations extends Component {
 	render() {
@@ -11,6 +12,8 @@ export default class Explainations extends Component {
 				return <Definition payload={payload} />
 			case 'visualization':
 				return <Visualization payload={payload} />
+			case 'partition':
+				return <Partition payload={payload} />
 			default:
 				return <div>Unknown type</div>
 		}

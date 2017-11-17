@@ -12,7 +12,7 @@ const dummy = [
 	payload: null
 }, 
 {
-	type: 'definition',
+	type: 'partition',
 	payload: null
 }, 
 {
