@@ -20,6 +20,8 @@ replace `{endpoint}` with your local port
 * [Meteor](https://www.meteor.com/)
 * [elastic search](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
 * [React.js](https://reactjs.org/)
+* [Bootstrap](https://getbootstrap.com/)
+* [SASS](http://sass-lang.com/)
 
 ## Test locally
 
