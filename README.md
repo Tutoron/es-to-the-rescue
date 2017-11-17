@@ -8,7 +8,7 @@
 
 ### Demo app structure
 
-<img alt="Demo app structure" src="https://raw.githubusercontent.com/tianhaoz95/pics/master/Blank%20Diagram%20-%20Page%201%20(2).png"/>
+<img alt="Demo app structure" src="https://raw.githubusercontent.com/tianhaoz95/pics/master/Blank%20Diagram%20-%20Page%201%20(3).png"/>
 
 ## Django server API
 
