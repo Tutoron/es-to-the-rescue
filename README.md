@@ -16,6 +16,9 @@ replace `{endpoint}` with your local port
 
 * `GET http://{endpoint}/api/queryLatex` takes Latex expression as "expression" and optional array of "context"
 * `GET http://{endpoint}/api/indexNotation` takes Latex expressions as "expression", the unique name for the notation as "id", related context list as "context", explainations as "explaination"
+* `GET http://{endpoint}/api/updateNotation` (under development)
+* `GET http://{endpoint}/api/expandNotation` (under development)
+* `GET http://{endpoint}/api/stripNotation` (under development)
 
 ## Prerequisites
 
