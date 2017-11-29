@@ -14,10 +14,6 @@ const dummy = [
 {
 	type: 'partition',
 	payload: null
-}, 
-{
-	type: 'visualization',
-	payload: null
 }]
 
 export default class App extends Component {
