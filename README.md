@@ -92,7 +92,7 @@ Current planned types of explaination:
 
 ## Test locally
 
-### Start elastic search server
+### Start elastic search server (Optional, will fallback to Cloud option)
 
 [Download](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html) and unzip the Elasticsearch official distribution.
 
