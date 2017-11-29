@@ -47,6 +47,8 @@ Run `bin/elasticsearch` on unix, or `bin\elasticsearch.bat` on windows.
 
 Run `curl -X GET http://localhost:9200/`
 
+You can also use [dejavu](https://github.com/appbaseio/dejavu) as GUI to elasticsearch
+
 ### Start django server
 
 `pip3 install -r requirements.txt` to install python dependencies
