@@ -1,3 +1,4 @@
 /.env
 /elasticsearch
 /demo/node_modules
+/virenv

@@ -26,8 +26,9 @@ export default class App extends Component {
 		console.log(query)
 		var thisObj = this
 		this.setState({status: "loading"})
-		Async.dummyQuery(query)
+		Async.queryDummy(query)
 		.then(function (list) {
+			console.log(list);
 			thisObj.setState({
 				status: "view",
 				list: list

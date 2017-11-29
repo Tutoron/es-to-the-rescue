@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     url(r'^indexNotation', views.indexNotation, name='indexNotation'),
-    url(r'^queryLatex', views.queryLatex, name='queryLatex'),
+    url(r'^queryLocal', views.queryLocal, name='queryLocal'),
+    url(r'^queryCloud', views.queryCloud, name='queryCloud'),
 ]

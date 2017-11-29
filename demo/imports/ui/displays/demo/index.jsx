@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 
 const formulas = [
   "c = \\pm\\sqrt{a^2 + b^2}",
-  "z = \\pm\\sqrt{x^2 + y^2}"
+  "z = \\pm\\sqrt{x^2 + y^2}",
+  "\\infty"
 ]
 
 export default class Demo extends Component {
@@ -28,6 +29,10 @@ export default class Demo extends Component {
         </div>
         <div
         onClick={() => this.props.onQueryChange(formulas[1])}
+          ref={(ref) => this.formulas.push(ref)}>
+        </div>
+        <div
+        onClick={() => this.props.onQueryChange(formulas[2])}
           ref={(ref) => this.formulas.push(ref)}>
         </div>
       </div>

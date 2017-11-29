@@ -1,6 +1,6 @@
 const methods = {
 	queryLatex: queryLatex,
-	dummyQuery: dummyQuery
+	queryDummy: queryDummy
 }
 
 const dummy = [
@@ -21,7 +21,7 @@ const dummy = [
 	payload: null
 }]
 
-function dummyQuery(expression) {
+function queryDummy(expression) {
 	return new Promise(function(resolve, reject) {
 		setTimeout(function () {
 			resolve(dummy)
