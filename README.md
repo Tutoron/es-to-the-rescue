@@ -38,6 +38,14 @@ replace `{endpoint}` with your local port
 }
 ```
 
+Current planned types of explaination:
+
+* Definition
+
+* Visualization
+
+* Partition
+
 ## Prerequisites
 
 * Recent version of java environment [JDK download](http://www.oracle.com/technetwork/java/javase/downloads/jdk6-jsp-136632.html)
