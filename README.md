@@ -42,9 +42,36 @@ Current planned types of explaination:
 
 * Definition
 
+```
+{
+  type: "definition",
+  payload: {
+    ...
+  }
+}
+```
+
 * Visualization
 
+```
+{
+  type: "visualization",
+  payload: {
+    ...
+  }
+}
+```
+
 * Partition
+
+```
+{
+  type: "partition",
+  payload: {
+    ...
+  }
+}
+```
 
 ## Prerequisites
 
