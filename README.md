@@ -20,6 +20,23 @@ replace `{endpoint}` with your local port
 * `GET http://{endpoint}/api/expandNotation` (under development)
 * `GET http://{endpoint}/api/stripNotation` (under development)
 
+## Indexing rule
+
+```
+{
+  id: "unique name of the notation",
+  context: ["array", "of", "related", "context"],
+  expression: ["array", "of", "possible", "expressions"],
+  explanation: [
+    {
+      type: "type of the explaination",
+      payload: { ... }
+    },
+    ...
+  ]
+}
+```
+
 ## Prerequisites
 
 * Recent version of java environment [JDK download](http://www.oracle.com/technetwork/java/javase/downloads/jdk6-jsp-136632.html)
