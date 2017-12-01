@@ -16,7 +16,7 @@ export default class Definition extends Component {
 		var position = demo.position			
 		return (
 			<div>
-				Definition: {symbolName} {definition} {(inText)? (position):''}
+				<h5>Definition:</h5> {symbolName} {definition} {(inText)? (position):''}
 
 			</div>
 		)

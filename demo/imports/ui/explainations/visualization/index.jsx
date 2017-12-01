@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 const demo = {
 	symbolName: '\Pi',
-	equation: 'sin(x)+cos(x/2)'
+	equation: 'sin(x)'
 }
 
 
@@ -27,7 +27,7 @@ export default class Visualization extends Component {
   	draw() {
     	try {
       	functionPlot({
-        	target: '#plot'+demo.symbolName,
+        	target: '#plot',
         	data: [{
           	fn: demo.equation,
           	sampler: 'builtIn',  // this will make function-plot use the evaluator of math.js
@@ -46,17 +46,24 @@ export default class Visualization extends Component {
 		return f.eval({x: this.state.inputValue})
   	}
 
+  	/*componentDidUpdate(){
+  		this.draw()
+  	}*/
+
+  	componentDidMount() {
+  		this.draw()
+  	}
+
 	render() {
-		window.onload = this.draw
-		var name = "plot"+demo.symbolName
+		var name = "plot"
 		return (
 			<div>
-				Visualization
+				<h5>Visualization</h5>
+				<p>Equation: {demo.equation}</p>
 				<input type="text" name="variable" value={this.state.inputValue} onChange={evt=>this.handleChange(evt)}></input>
 				{this.state.inputValue ? this.mathJSEval() : null}
 
 				<div id={name}></div>
-				
 			</div>
 		)
 	}

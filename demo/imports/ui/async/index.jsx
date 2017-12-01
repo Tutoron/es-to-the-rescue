@@ -15,10 +15,6 @@ const dummy = [
 {
 	type: 'partition',
 	payload: null
-},
-{
-	type: 'visualization',
-	payload: null
 }]
 
 function queryDummy(expression) {
