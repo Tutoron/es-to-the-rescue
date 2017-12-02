@@ -7,15 +7,25 @@ export default class Explainations extends Component {
 	render() {
 		var type = this.props.item.type
 		var payload = this.props.item.payload
+		var content = null
 		switch(type) {
 			case 'definition':
-				return (<Definition payload={payload} />)
+				content = (<Definition payload={payload} />)
+				break
 			case 'visualization':
-				return (<Visualization payload={payload} />)
+				content = (<Visualization payload={payload} />)
+				break
 			case 'partition':
-				return (<Partition payload={payload} />)
+				content = (<Partition payload={payload} />)
+				break
 			default:
-				return (<div>Unknown type</div>)
+				content = (<div className="warning-page">Unknown type</div>)
+				break
 		}
+		return (
+			<div className="card explaination-card">
+				{content}
+			</div>
+		)
 	}
 }

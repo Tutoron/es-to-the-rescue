@@ -1,26 +1,14 @@
+import getDummy from './dummyList'
+
 const methods = {
 	queryLatex: queryLatex,
 	queryDummy: queryDummy
 }
 
-const dummy = [
-{
-	type: 'definition',
-	payload: null
-},
-{
-	type: 'visualization',
-	payload: null
-},
-{
-	type: 'partition',
-	payload: null
-}]
-
 function queryDummy(expression) {
 	return new Promise(function(resolve, reject) {
 		setTimeout(function () {
-			resolve(dummy)
+			resolve(getDummy())
 		}, 1000);
 	});
 }

@@ -3,11 +3,10 @@ import React, { Component } from 'react'
 export default class Menu extends Component {
   render() {
     return (
-      <div>
-        Menu
+      <div className="menu-component">
         <button
           type="button"
-          className="btn btn-light dropdown-toggle"
+          className="btn btn-light btn-sm dropdown-toggle"
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false">

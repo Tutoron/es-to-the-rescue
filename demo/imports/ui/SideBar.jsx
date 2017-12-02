@@ -1,11 +1,6 @@
 import React, { Component } from 'react'
 import Explaination from './explainations/index'
 
-var empty = {
-	type: 'notation',
-	payload: null
-}
-
 export default class SideBar extends Component {
 	constructor(props) {
 		super(props)
@@ -13,8 +8,7 @@ export default class SideBar extends Component {
 
 	render() {
 		return (
-			<div>
-				SideBar
+			<div className="explaination-sidebar">
 				{this.props.list.map((item, index) => (
 					<Explaination item={item} key={index} />
 				))}

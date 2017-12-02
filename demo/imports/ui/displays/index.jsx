@@ -4,13 +4,22 @@ import Pdf from './pdf/index'
 
 export default class Display extends Component {
   render() {
+    var content = null
     switch (this.props.type) {
       case "demo":
-        return (<Demo onQueryChange={this.props.onQueryChange}/>)
+        content = (<Demo onQueryChange={this.props.onQueryChange}/>)
+        break
       case "pdf":
-        return (<Pdf onQueryChange={this.props.onQueryChange}/>)
+        content = (<Pdf onQueryChange={this.props.onQueryChange}/>)
+        break
       default:
-        return (<div>Unknown type</div>)
+        content = (<div>Unknown type</div>)
+        break
     }
+    return (
+      <div>
+        {content}
+      </div>
+    )
   }
 }

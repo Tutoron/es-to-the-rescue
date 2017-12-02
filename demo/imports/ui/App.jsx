@@ -12,7 +12,7 @@ export default class App extends Component {
 		this.state = {
 			status: "view",
 			list: [],
-			type: "none"
+			type: "demo"
 		}
 		this.handleQueryChange = this.handleQueryChange.bind(this)
 		this.handleTypeChange = this.handleTypeChange.bind(this)
@@ -43,14 +43,26 @@ export default class App extends Component {
 	render() {
 		return (
 			<div className="row main-page">
-				<div className="col-8">
-					<Menu onTypeChange={this.handleTypeChange}/>
-					<Display type={this.state.type} onQueryChange={this.handleQueryChange}/>
+				<div className="col-8 main-page-display">
+					<div className="display-group-wrapper">
+						<Menu onTypeChange={this.handleTypeChange}/>
+						<Display type={this.state.type} onQueryChange={this.handleQueryChange}/>
+					</div>
 				</div>
-				<div className="col-4">
+				<div className="col-4 main-page-sidebar">
 					{this.state.status === "loading" ? (
-						<div>
-							loading ...
+						<div className="progress-sidebar">
+							<p>Loading explainations ... </p>
+							<div className="progress">
+								<div
+									className="progress-bar progress-bar-striped progress-bar-animated"
+									role="progressbar"
+									aria-valuenow={75}
+									aria-valuemin={0}
+									aria-valuemax={100}
+									style={{width: "100%"}}>
+								</div>
+							</div>
 						</div>
 					) : (
 						<SideBar list={this.state.list}/>

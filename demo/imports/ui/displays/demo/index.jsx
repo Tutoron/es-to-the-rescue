@@ -25,23 +25,63 @@ export default class Demo extends Component {
 
   render() {
     return (
-      <div>
+      <div className="demo-page">
         <h3>Demo:</h3>
 
-        <p><b>Expected gradient</b>. To maximize Eqn.4,  we utilize policy gradient[46], one of the seminal policy search methods[9], to compute the gradients of J. In contrast to typical reinforcement learning methods where policies are sampled from a multinomial distribution[46],  our policies are generated from a K-dimensional Bernoulli distribution. The gradients can be derived similarly as:</p>
+        <p>
+          <b>Expected gradient</b>.
+          To maximize Eqn.4,  we utilize policy gradient[46], one of the seminal policy search methods[9], to compute the gradients of J. In contrast to typical reinforcement learning methods where policies are sampled from a multinomial distribution[46],  our policies are generated from a K-dimensional Bernoulli distribution. The gradients can be derived similarly as:
+        </p>
 
         <div
           onClick={() => this.props.onQueryChange(formulas[0])}
           ref={(ref) => this.formulas.push(ref)}>
         </div>
+
+        <p>
+          <b>Expected gradient</b>.
+          To maximize Eqn.4,  we utilize policy gradient[46], one of the seminal policy search methods[9], to compute the gradients of J. In contrast to typical reinforcement learning methods where policies are sampled from a multinomial distribution[46],  our policies are generated from a K-dimensional Bernoulli distribution. The gradients can be derived similarly as:
+        </p>
+
         <div
           onClick={() => this.props.onQueryChange(formulas[1])}
           ref={(ref) => this.formulas.push(ref)}>
         </div>
+
+        <p>
+          <b>Expected gradient</b>.
+          To maximize Eqn.4,  we utilize policy gradient[46], one of the seminal policy search methods[9], to compute the gradients of J. In contrast to typical reinforcement learning methods where policies are sampled from a multinomial distribution[46],  our policies are generated from a K-dimensional Bernoulli distribution. The gradients can be derived similarly as:
+        </p>
+
         <div
           onClick={() => this.props.onQueryChange(formulas[2])}
           ref={(ref) => this.formulas.push(ref)}>
         </div>
+
+        <p>
+          <b>Expected gradient</b>.
+          To maximize Eqn.4,  we utilize policy gradient[46], one of the seminal policy search methods[9], to compute the gradients of J. In contrast to typical reinforcement learning methods where policies are sampled from a multinomial distribution[46],  our policies are generated from a K-dimensional Bernoulli distribution. The gradients can be derived similarly as:
+        </p>
+
+        <p>
+          <b>Expected gradient</b>.
+          To maximize Eqn.4,  we utilize policy gradient[46], one of the seminal policy search methods[9], to compute the gradients of J. In contrast to typical reinforcement learning methods where policies are sampled from a multinomial distribution[46],  our policies are generated from a K-dimensional Bernoulli distribution. The gradients can be derived similarly as:
+        </p>
+
+        <p>
+          <b>Expected gradient</b>.
+          To maximize Eqn.4,  we utilize policy gradient[46], one of the seminal policy search methods[9], to compute the gradients of J. In contrast to typical reinforcement learning methods where policies are sampled from a multinomial distribution[46],  our policies are generated from a K-dimensional Bernoulli distribution. The gradients can be derived similarly as:
+        </p>
+
+        <p>
+          <b>Expected gradient</b>.
+          To maximize Eqn.4,  we utilize policy gradient[46], one of the seminal policy search methods[9], to compute the gradients of J. In contrast to typical reinforcement learning methods where policies are sampled from a multinomial distribution[46],  our policies are generated from a K-dimensional Bernoulli distribution. The gradients can be derived similarly as:
+        </p>
+
+        <p>
+          <b>Expected gradient</b>.
+          To maximize Eqn.4,  we utilize policy gradient[46], one of the seminal policy search methods[9], to compute the gradients of J. In contrast to typical reinforcement learning methods where policies are sampled from a multinomial distribution[46],  our policies are generated from a K-dimensional Bernoulli distribution. The gradients can be derived similarly as:
+        </p>
 
       </div>
     )
