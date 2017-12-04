@@ -1,0 +1,115 @@
+[
+	{
+		"id": "bernoulli",
+		"context": ["stats"],
+		"expression": ["\\pi_{\\bf W} ({\\bf u}|{\\bf x}) = \\prod_{k=1}^{K} {\\bf s}_k^{{\\bf u}_k}(1-{\\bf s}_k)^{1-{\\bf u}_k}"],
+		"explanation": [
+			{
+				"type": "definition",
+				"payload": {
+					"symbolName": "bernoulli",
+					"definition": "In probability theory and statistics, the Bernoulli distribution, named after Swiss mathematician Jacob Bernoulli, is the probability distribution of a random variable which takes the value 1 with probability p and the value 0 with probability q=1-p — i.e., the probability distribution of any single experiment that asks a yes–no question; the question results in a boolean-valued outcome, a single bit of information whose value is success/yes/true/one with probability p and failure/no/false/zero with probability q. It can be used to represent a coin toss where 1 and 0 would represent 'head' and 'tail' (or vice versa), respectively. ",
+					"inText": false,
+					"position": []
+
+				}
+			},
+
+			{
+			  "type": "visualization",
+			  "payload": {
+			    "symbolName": "normal",
+				  "equation": "1/(sqrt(2*sigma))*e^(-(x-mu)^2/sigma)",
+				  "variable": [
+				    {"id": "x", "rule": "true"}, 
+				    {"id": "sigma", "rule":"true"},
+				    {"id": "mu", "rule":"true"}
+				  ]
+			  }
+			}
+		]
+	},
+
+	{
+	  "id": "fpn",
+	  "context": ["machine learning"],
+	  "expression": ["f_{pn}"],
+	  "explanation": [
+	    {
+		  "type": "definition",
+		  "payload": {
+		    "symbolName": "fpn",
+		    "definition": "Defined by author: it denotes the policy network parameterized by weights W and s is the output of the network after the function.",
+		    "inText": true, 
+		    "position": [] 
+		  }
+		}
+	  ]
+	},
+
+{
+  "id": "expectation",
+  "context": ["stats"],
+  "expression": ["\\mathbb{E}"],
+  "explanation": [
+	    {
+		  "type": "definition",
+		  "payload": {
+		    "symbolName": "expectation",
+		    "definition": "The expected value (or mean) of X, where X is a discrete random variable, is a weighted average of the possible values that X can take, each value being weighted according to the probability of that event occurring. The expected value of X is usually written as E(X) or m.",
+		    "inText": false, 
+		    "position": [] 
+		  }
+		}
+	]
+},
+
+{
+  "id": "delta",
+  "context": ["machine learning", "calculus"],
+  "expression": ["\\nabla"],
+  "explanation": [
+	    {
+		  "type": "definition",
+		  "payload": {
+		    "symbolName": "unique name of the notation",
+		    "definition": "definition of the notation",
+		    "inText": true, 
+		    "position": [] 
+		  }
+		}
+	 ]
+},
+
+{
+  "id": "unique name of the notation",
+  "context": ["array", "of", "related", "context"],
+  "expression": ["array", "of", "possible", "expressions"],
+  "explanation": [
+	    {
+		  "type": "definition",
+		  "payload": {
+		    "symbolName": "unique name of the notation",
+		    "definition": "definition of the notation",
+		    "inText": true, 
+		    "position": [] 
+		  }
+		},
+
+		{
+		  "type": "visualization",
+		  "payload": {
+		    "symbolName": "unique name of the notation",
+		    "equation": "equation used to calculate and plot the graph",
+		    "variable": [
+		      {"id": "x", "rule": "some rule"}, 
+		      {"id": "y", "rule":"true"}
+		    ]
+		  }
+		}
+	]
+}
+
+
+
+]
