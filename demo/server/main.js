@@ -18,7 +18,7 @@ Meteor.methods({
 		if (res.data["status"] === "error") {
 			console.log("fallback to cloud")
 			res = req(queryCloudEndpoint, {params: params})
-			res = res.data["hits"][0]["explaination"]
+			res = res.data["hits"][0]["explanation"]
 		} else {
 			res = res.data
 		}
