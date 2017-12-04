@@ -63,8 +63,8 @@ Current planned types of explaination:
     symbolName: 'unique name of the notation',
     equation: 'equation used to calculate and plot the graph',
     variable: [
-      {id: "x", rule: "some rule"}, //if no rule required, then just put true. Assume first element is the x-variable used to plot the function
-      {id: "y", rule:"true"}, //other variables in the equation
+      {id: "x", rule: {min: "-30.0", max: "30.0", exclude: ["0"]}}, //Assume first element is the x-variable used to plot the function, rule: min value, max value, value to be excluded (for example: 0)
+      {id: "y", rule:{min: "-30.0", max: "30.0", exclude: []}}, //other variables in the equation
     ]
   }
 }

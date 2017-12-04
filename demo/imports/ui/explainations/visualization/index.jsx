@@ -12,9 +12,9 @@ const demo = {
   symbolName: '\normal',
   equation: '1/(sqrt(2*sigma))*e^(-(x-mu)^2/sigma)',
   variable: [
-    {id: "x", rule: "true"}, //if no restriction, then just put true. Assume first element is x variable used to plot the function
-    {id: "sigma", rule:"true"},
-    {id: "mu", rule:"true"}
+    {id: "x", rule: {min: "-30.0", max: "30.0", exclude: []}}, //Assume first element is x variable used to plot the function
+    {id: "sigma", rule: {min: "0.0", max: "5.0", exclude: ["0"]}},
+    {id: "mu", rule: {min: "-100.0", max: "100.0", exclude: ["0"]}}
   ]
 }
 
@@ -72,6 +72,7 @@ export default class Visualization extends Component {
 
   	mathJSEval(){
       if (this.validValue()){
+        this.draw()
         var f = math.parse(demo.equation);
         return f.eval(this.state)
       }
@@ -83,8 +84,12 @@ export default class Visualization extends Component {
 
     validValue(){
       for (i=0; i<demo.variable.length; i++){
-        if (!this.state[demo.variable[i].id]){
-          return false;
+        var excludeArray = demo.variable[i].rule.exclude;
+        for (j=0; j<excludeArray; j++){
+          if (excludeArray[j].value==this.state[demo.variable[i].id].value){
+            console.log("catch one!")
+            return false;
+          }
         }
       }
       return true;
@@ -92,10 +97,11 @@ export default class Visualization extends Component {
 
 	render() {
     var indents = [];
+
     for (var i = 0; i < demo.variable.length; i++) {
       var varName = demo.variable[i].id;
       var varValue = this.state[varName];
-      indents.push(<label>{varName}: <input className="col-4" type="text" name={varName} value={varValue} onChange={evt=> {this.handleChange(evt);this.draw()}}></input></label>);
+      indents.push(<p><label>{varName}: <input type="range" name={varName} value={varValue} min={demo.variable[i].rule.min} max={demo.variable[i].rule.max} step="0.01" onChange={evt=> this.handleChange(evt)}></input>{varValue}</label></p>);
     }
 
 		return (
@@ -106,8 +112,7 @@ export default class Visualization extends Component {
           {indents}
         </div>
         <label>Output Value:  </label>{this.mathJSEval()}
-				<div className="col-4" id="plot"></div>
-        
+				<div id="plot"></div>
 			</div>
 		)
   }
