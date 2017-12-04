@@ -46,7 +46,10 @@ Current planned types of explaination:
 {
   type: "definition",
   payload: {
-    ...
+    symbolName: 'unique name of the notation',
+    definition: 'definition of the notation',
+    inText: true, //whether its definition is author defined in the paper
+    position: [] //the position of in-text definition
   }
 }
 ```
@@ -57,7 +60,12 @@ Current planned types of explaination:
 {
   type: "visualization",
   payload: {
-    ...
+    symbolName: 'unique name of the notation',
+    equation: 'equation used to calculate and plot the graph',
+    variable: [
+      {id: "x", rule: "some rule"}, //if no rule required, then just put true. Assume first element is the x-variable used to plot the function
+      {id: "y", rule:"true"}, //other variables in the equation
+    ]
   }
 }
 ```
