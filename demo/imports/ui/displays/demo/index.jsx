@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
 
-const formulas1 = [
-  "\\nabla_{{\\bf W}} J =  \\mathbb{E}[ R({\\bf u})\\nabla_{{\\bf W}}\\text{log}~\\pi_{{\\bf W}}({\\bf u}|{\\bf x})]"
-]
-
 const formulas = [
 "\\pi_{\\bf W} ({\\bf u}|{\\bf x}) = \\prod_{k=1}^{K} {\\bf s}_k^{{\\bf u}_k}(1-{\\bf s}_k)^{1-{\\bf u}_k}", //entire formula clickable, Bernoulli distribution, visualisation available
 "{\\bf s}  = f_{pn}({\\bf x}; {\\bf W})", //f_{pn} clickable, in-text definition
@@ -30,9 +26,9 @@ export default class Demo extends Component {
     return (
       <div className="demo-page">
         <h3>Demo:</h3>
-
-        <p>
+        
           <h4>Policy Network for Dynamic Inference Paths</h4>
+        <p>
           Formally, given an image <b>x</b> and a pretrained ResNet with K residual blocks, we define a policy of block-dropping behavior as a K-dimensional Bernoulli distribution:
         </p>
 

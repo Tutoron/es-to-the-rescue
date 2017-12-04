@@ -26,7 +26,7 @@ export default class App extends Component {
 		console.log(query)
 		var thisObj = this
 		this.setState({status: "loading"})
-		Async.queryDummy(query)
+		Async.queryLatex(query)
 		.then(function (list) {
 			console.log(list);
 			thisObj.setState({
