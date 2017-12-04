@@ -4,7 +4,7 @@ const demo = {
 	symbolName: '\Pi',
 	definition: 'some definition',
 	inText: true,
-	position: 'highlight_id'
+	position: []
 }
 
 export default class Definition extends Component {
@@ -16,7 +16,10 @@ export default class Definition extends Component {
 		var position = demo.position			
 		return (
 			<div>
-				<h5>Definition:</h5> {symbolName} {definition} {(inText)? (position):''}
+				<h5>Definition:</h5> 
+				<p>{symbolName} </p>
+				<p>{definition}</p> 
+				<p>{(inText)? (position):''}</p>
 
 			</div>
 		)

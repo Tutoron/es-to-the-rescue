@@ -8,71 +8,7 @@ dummy = [
 	payload: null
 },
 {
-	type: 'definition',
-	payload: null
-},
-{
-	type: 'definition',
-	payload: null
-},
-{
-	type: 'definition',
-	payload: null
-},
-{
-	type: 'definition',
-	payload: null
-},
-{
-	type: 'definition',
-	payload: null
-},
-{
-	type: 'definition',
-	payload: null
-},
-{
-	type: 'definition',
-	payload: null
-},
-{
-	type: 'definition',
-	payload: null
-},
-{
-	type: 'definition',
-	payload: null
-},
-{
-	type: 'definition',
-	payload: null
-},
-{
-	type: 'definition',
-	payload: null
-},
-{
-	type: 'definition',
-	payload: null
-},
-{
-	type: 'definition',
-	payload: null
-},
-{
-	type: 'definition',
-	payload: null
-},
-{
-	type: 'definition',
-	payload: null
-},
-{
-	type: 'definition',
-	payload: null
-},
-{
-	type: 'definition',
+	type: 'visualization',
 	payload: null
 }
 ]
