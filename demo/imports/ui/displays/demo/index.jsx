@@ -110,7 +110,7 @@ export default class Demo extends Component {
 
         <div>
           <span
-            className="highlight-notation" style = "margin : 10px"
+            className="highlight-notation" style = {{marginRight: 0.5 + 'em'}}
             onClick={() => this.props.onQueryChange(formulas[10])}
             ref={(ref) => this.formulas.push(ref)}>
           </span>
