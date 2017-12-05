@@ -19,13 +19,10 @@ export default class Definition extends Component {
 		var inText = demo.inText
 		var position = demo.position
 
-		//var element = '∇'
-
 		return (
 			<div>
 				<h5>Definition:</h5>
-				<div ref={(ref) => this.notationRef = ref}></div>
-				<p>{symbolName} </p>
+				<div ref={(ref) => this.notationRef = ref}></div>	
 				<p>{definition}</p>
 				<p>{(inText)? (position):''}</p>
 
