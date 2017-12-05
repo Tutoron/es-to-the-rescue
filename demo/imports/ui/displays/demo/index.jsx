@@ -1,20 +1,21 @@
 import React, { Component } from 'react'
 
 const formulas = [
-"P(x) = \\frac{1}{{\\sigma \\sqrt {2\\pi } }}e^{{{ - ( {x - \\mu } )^2 } \\mathord{/ {\\vphantom {{ - ( {x - \\mu } )^2 } {2\\sigma ^2 }}} } {2\\sigma ^2 }}}", //0
-"\\pi_{\\bf W} ({\\bf u}|{\\bf x}) = \\prod_{k=1}^{K} {\\bf s}_k^{{\\bf u}_k}(1-{\\bf s}_k)^{1-{\\bf u}_k}", //1
-"{\\bf s}  = ",
-"f_{pn}", //3
-"({\\bf x}; {\\bf W})", 
-"f_{pn}", 
-"{\\bf s}^k \\in [0, 1]",   
-"J = ", //7
-"\\mathbb{E}_{{\\bf u}\\thicksim {\\bf \\pi}_{\\bf W}}", //8
-"[ R({\\bf u})]",  //9
-"\\nabla_{{\\bf W}}", //10
+"\\nabla_{{\\bf W}}", //0
 "J = ",
-" \\mathbb{E}", //12
-"[ R({\\bf u})\\nabla_{{\\bf W}}\\text{log}~\\pi_{{\\bf W}}({\\bf u}|{\\bf x})]" 
+" \\mathbb{E}", //2
+"[ R({\\bf u})\\nabla_{{\\bf W}}\\text{log}~\\pi_{{\\bf W}}({\\bf u}|{\\bf x})]" ,
+
+"\\pi_{\\bf W} ({\\bf u}|{\\bf x}) = \\prod_{k=1}^{K} {\\bf s}_k^{{\\bf u}_k}(1-{\\bf s}_k)^{1-{\\bf u}_k}", //4
+"{\\bf s}  = ",
+"f_{pn}", //6
+"({\\bf x}; {\\bf W})", 
+"{\\bf s}^k \\in [0, 1]",   
+"f_{pn}", 
+"J = ", //10
+"\\mathbb{E}_{{\\bf u}\\thicksim {\\bf \\pi}_{\\bf W}}", //11
+"[ R({\\bf u})]",  //12
+
 ]
 
 export default class Demo extends Component {
@@ -27,6 +28,7 @@ export default class Demo extends Component {
   componentDidMount() {
     this.formulas.forEach((elt, idx) => {
       this.tex.render(formulas[idx], elt)
+      console.log(this.tex.renderToString(formulas[idx]))
     })
   }
 
@@ -34,26 +36,50 @@ export default class Demo extends Component {
     return (
       <div className="demo-page">
         <h3>Demo:</h3>
-        
-        <h4>Policy Network for Dynamic Inference Paths</h4>
 
+        <h4>Training the policy</h4>
         <p>
-          In contrast to this distribution:
+          <b>Expected gradient</b>.
+          To maximize Eqn.4,  we utilize policy gradient[46], one of the seminal policy search methods[9], to compute the gradients of J. In contrast to typical reinforcement learning methods where policies are sampled from a multinomial distribution[46],  our policies are generated from a K-dimensional Bernoulli distribution. The gradients can be derived similarly as:
         </p>
 
-        <div
+        <div>
+          <span
             className="highlight-notation"
             onClick={() => this.props.onQueryChange(formulas[0])}
             ref={(ref) => this.formulas.push(ref)}>
+          </span>
+
+          <span
+            ref={(ref) => this.formulas.push(ref)}>
+          </span>
+
+          <span
+            className="highlight-notation"
+            onClick={() => this.props.onQueryChange(formulas[2])}
+            ref={(ref) => this.formulas.push(ref)}>
+          </span>
+
+          <span
+              ref={(ref) => this.formulas.push(ref)}>
+          </span>
         </div>
 
+        <p>
+          <b>Curriculum learning</b>. 
+          Policy gradient methods are typically extremely sensitive to their initialization. Indeed, we found that starting from a randomly initialized policy and optimizing for both accuracy and block usage is not effective, due the extremely large dimension of the search space, which scales exponentially with the total number of blocks (there are 2 K possible on/off configurations of the blocks). Note that in contrast with applications such as image captioning where ground-truth action sequences (captions) can be used to train an initial policy [39], here no such “expert examples” are available, other than the standard single execution path that executes all blocks.
+        </p>
+        
+        <h4>Policy Network for Dynamic Inference Paths</h4>
+
+        
         <p>
           Formally, given an image <b>x</b> and a pretrained ResNet with K residual blocks, we define a policy of block-dropping behavior as a K-dimensional Bernoulli distribution:
         </p>
 
         <div
           className="highlight-notation"
-          onClick={() => this.props.onQueryChange(formulas[1])}
+          onClick={() => this.props.onQueryChange(formulas[4])}
           ref={(ref) => this.formulas.push(ref)}>
 
         </div>
@@ -65,7 +91,7 @@ export default class Demo extends Component {
 
           <span
             className="highlight-notation"
-            onClick={() => this.props.onQueryChange(formulas[3])}
+            onClick={() => this.props.onQueryChange(formulas[6])}
             ref={(ref) => this.formulas.push(ref)}>
           </span>
           
@@ -75,7 +101,7 @@ export default class Demo extends Component {
         </div>
 
         <p>
-            where <span ref={(ref) => this.formulas.push(ref)}/>  denotes the policy network parameterized by weights W and s is the output of the network after the function. We choose the architecture such that the cost of running it is negligible compared to ResNet, i.e, so that policy execution overhead remains low. The k-th entry of the vector, <span ref={(ref) => this.formulas.push(ref)}/>, represents the likelihood of its corresponding residual block in the original ResNet being dropped.
+            We choose the architecture such that the cost of running it is negligible compared to ResNet, i.e, so that policy execution overhead remains low. The k-th entry of the vector, <span ref={(ref) => this.formulas.push(ref)}/>, represents the likelihood of its corresponding residual block in the original ResNet being dropped. Here, <span ref={(ref) => this.formulas.push(ref)}/>  denotes the policy network parameterized by weights W and s is the output of the network after the function.
         </p>
 
         <p>
@@ -84,20 +110,20 @@ export default class Demo extends Component {
 
         <div>
           <span
-            className="highlight-notation"
-            onClick={() => this.props.onQueryChange(formulas[7])}
+            className="highlight-notation" style = "margin : 10px"
+            onClick={() => this.props.onQueryChange(formulas[10])}
             ref={(ref) => this.formulas.push(ref)}>
           </span>
 
           <span
             className="highlight-notation"
-            onClick={() => this.props.onQueryChange(formulas[8])}
+            onClick={() => this.props.onQueryChange(formulas[11])}
             ref={(ref) => this.formulas.push(ref)}>
           </span>
           
           <span
             className="highlight-notation"
-            onClick={() => this.props.onQueryChange(formulas[9])}
+            onClick={() => this.props.onQueryChange(formulas[12])}
             ref={(ref) => this.formulas.push(ref)}>
           </span>
         </div>
@@ -106,42 +132,22 @@ export default class Demo extends Component {
           In summary, our model works as follows: f is used to decide which blocks of the ResNet to keep conditioned on the input image, a prediction is generated by running a forward pass with the ResNet using only these blocks, and a reward is observed based on correctness and efficiency.
         </p>
 
-
-        <h4>Training the policy</h4>
-        <p>
-          <b>Expected gradient</b>.
-          To maximize Eqn.4,  we utilize policy gradient[46], one of the seminal policy search methods[9], to compute the gradients of J. In contrast to typical reinforcement learning methods where policies are sampled from a multinomial distribution[46],  our policies are generated from a K-dimensional Bernoulli distribution. The gradients can be derived similarly as:
-        </p>
-
-        <div>
-          <span
-            className="highlight-notation"
-            onClick={() => this.props.onQueryChange(formulas[10])}
-            ref={(ref) => this.formulas.push(ref)}>
-          </span>
-
-          <span
-            ref={(ref) => this.formulas.push(ref)}>
-          </span>
-
-          <span
-            className="highlight-notation"
-            onClick={() => this.props.onQueryChange(formulas[12])}
-            ref={(ref) => this.formulas.push(ref)}>
-          </span>
-
-          <span
-              ref={(ref) => this.formulas.push(ref)}>
-          </span>
-        </div>
-
-
-        <p>
-          <b>Curriculum learning</b>. 
-          Policy gradient methods are typically extremely sensitive to their initialization. Indeed, we found that starting from a randomly initialized policy and optimizing for both accuracy and block usage is not effective, due the extremely large dimension of the search space, which scales exponentially with the total number of blocks (there are 2 K possible on/off configurations of the blocks). Note that in contrast with applications such as image captioning where ground-truth action sequences (captions) can be used to train an initial policy [39], here no such “expert examples” are available, other than the standard single execution path that executes all blocks.
-        </p>
+        
 
       {/*
+
+        formula = "P(x) = \\frac{1}{{\\sigma \\sqrt {2\\pi } }}e^{{{ - ( {x - \\mu } )^2 } \\mathord{/ {\\vphantom {{ - ( {x - \\mu } )^2 } {2\\sigma ^2 }}} } {2\\sigma ^2 }}}"
+
+        <p>
+          In contrast to this distribution:
+        </p>
+
+        <div
+            className="highlight-notation"
+            onClick={() => this.props.onQueryChange(formulas[0])}
+            ref={(ref) => this.formulas.push(ref)}>
+        </div>
+
         <p>
           <b>Expected gradient</b>.
           To maximize Eqn.4,  we utilize policy gradient[46], one of the seminal policy search methods[9], to compute the gradients of J. In contrast to typical reinforcement learning methods where policies are sampled from a multinomial distribution[46],  our policies are generated from a K-dimensional Bernoulli distribution. The gradients can be derived similarly as:

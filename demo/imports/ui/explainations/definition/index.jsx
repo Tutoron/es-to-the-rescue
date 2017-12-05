@@ -21,6 +21,8 @@ export default class Definition extends Component {
 		var inText = demo.inText
 		var position = demo.position
 
+		//var element = '∇'
+
 		return (
 			<div>
 				<h5>Definition:</h5> 
