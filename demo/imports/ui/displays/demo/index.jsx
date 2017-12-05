@@ -35,7 +35,6 @@ export default class Demo extends Component {
   render() {
     return (
       <div className="demo-page">
-        <h3>Demo:</h3>
 
         <h4>Training the policy</h4>
         <p>
