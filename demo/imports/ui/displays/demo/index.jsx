@@ -4,17 +4,21 @@ const formulas = [
 "\\nabla_{{\\bf W}}", //0
 "J = ",
 " \\mathbb{E}", //2
-"[ R({\\bf u})\\nabla_{{\\bf W}}\\text{log}~\\pi_{{\\bf W}}({\\bf u}|{\\bf x})]" ,
+"[ R({\\bf u})\\nabla_{{\\bf W}}\\text{log}~\\pi_{{\\bf W}}(",
 
-"\\pi_{\\bf W} ({\\bf u}|{\\bf x}) = \\prod_{k=1}^{K} {\\bf s}_k^{{\\bf u}_k}(1-{\\bf s}_k)^{1-{\\bf u}_k}", //4
+"{\\bf u}", //4
+"|",
+"{\\bf x})]" , //6
+
+"\\pi_{\\bf W} ({\\bf u}|{\\bf x}) = \\prod_{k=1}^{K} {\\bf s}_k^{{\\bf u}_k}(1-{\\bf s}_k)^{1-{\\bf u}_k}", //7
 "{\\bf s}  = ",
-"f_{pn}", //6
+"f_{pn}", //9
 "({\\bf x}; {\\bf W})",
 "{\\bf s}^k \\in [0, 1]",
 "f_{pn}",
-"J = ", //10
-"\\mathbb{E}_{{\\bf u}\\thicksim {\\bf \\pi}_{\\bf W}}", //11
-"[ R({\\bf u})]",  //12
+"J = ", //13
+"\\mathbb{E}_{{\\bf u}\\thicksim {\\bf \\pi}_{\\bf W}}", //14
+"[ R({\\bf u})]",  //15
 
 ]
 
@@ -62,6 +66,23 @@ export default class Demo extends Component {
           <span
               ref={(ref) => this.formulas.push(ref)}>
           </span>
+
+           <span
+            className="highlight-notation"
+            onClick={() => this.props.onQueryChange(formulas[4])}
+            ref={(ref) => this.formulas.push(ref)}>
+          </span>
+
+           <span
+            ref={(ref) => this.formulas.push(ref)}>
+          </span>
+
+           <span
+            className="highlight-notation"
+            onClick={() => this.props.onQueryChange(formulas[6])}
+            ref={(ref) => this.formulas.push(ref)}>
+          </span>
+
         </div>
 
         <p>
@@ -78,7 +99,7 @@ export default class Demo extends Component {
 
         <div
           className="highlight-notation"
-          onClick={() => this.props.onQueryChange(formulas[4])}
+          onClick={() => this.props.onQueryChange(formulas[7])}
           ref={(ref) => this.formulas.push(ref)}>
 
         </div>
@@ -90,7 +111,7 @@ export default class Demo extends Component {
 
           <span
             className="highlight-notation"
-            onClick={() => this.props.onQueryChange(formulas[6])}
+            onClick={() => this.props.onQueryChange(formulas[9])}
             ref={(ref) => this.formulas.push(ref)}>
           </span>
 
@@ -110,19 +131,19 @@ export default class Demo extends Component {
         <div>
           <span
             className="highlight-notation" style = {{marginRight: 0.5 + 'em'}}
-            onClick={() => this.props.onQueryChange(formulas[10])}
+            onClick={() => this.props.onQueryChange(formulas[13])}
             ref={(ref) => this.formulas.push(ref)}>
           </span>
 
           <span
             className="highlight-notation"
-            onClick={() => this.props.onQueryChange(formulas[11])}
+            onClick={() => this.props.onQueryChange(formulas[14])}
             ref={(ref) => this.formulas.push(ref)}>
           </span>
 
           <span
             className="highlight-notation"
-            onClick={() => this.props.onQueryChange(formulas[12])}
+            onClick={() => this.props.onQueryChange(formulas[15])}
             ref={(ref) => this.formulas.push(ref)}>
           </span>
         </div>
