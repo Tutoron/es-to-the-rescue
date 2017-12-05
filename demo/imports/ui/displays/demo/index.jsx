@@ -1,12 +1,20 @@
 import React, { Component } from 'react'
 
 const formulas = [
-"\\pi_{\\bf W} ({\\bf u}|{\\bf x}) = \\prod_{k=1}^{K} {\\bf s}_k^{{\\bf u}_k}(1-{\\bf s}_k)^{1-{\\bf u}_k}", //entire formula clickable, Bernoulli distribution, visualisation available
-"{\\bf s}  = f_{pn}({\\bf x}; {\\bf W})", //f_{pn} clickable, in-text definition
-"f_{pn}", //just for display
-"{\\bf s}^k \\in [0, 1]",   //just for display
-"J = \\mathbb{E}_{{\\bf u}\\thicksim {\\bf \\pi}_{\\bf W}}[ R({\\bf u})]", //\\mathbb{E} clickable, out-of-text def for expectation
-"\\nabla_{{\\bf W}} J =  \\mathbb{E}[ R({\\bf u})\\nabla_{{\\bf W}}\\text{log}~\\pi_{{\\bf W}}({\\bf u}|{\\bf x})]" //\\nabla clickable, out-of-text def: gradient, log clickable(optional)
+"P(x) = \\frac{1}{{\\sigma \\sqrt {2\\pi } }}e^{{{ - ( {x - \\mu } )^2 } \\mathord{/ {\\vphantom {{ - ( {x - \\mu } )^2 } {2\\sigma ^2 }}} } {2\\sigma ^2 }}}", //0
+"\\pi_{\\bf W} ({\\bf u}|{\\bf x}) = \\prod_{k=1}^{K} {\\bf s}_k^{{\\bf u}_k}(1-{\\bf s}_k)^{1-{\\bf u}_k}", //1
+"{\\bf s}  = ",
+"f_{pn}", //3
+"({\\bf x}; {\\bf W})", 
+"f_{pn}", 
+"{\\bf s}^k \\in [0, 1]",   
+"J = ", //7
+"\\mathbb{E}_{{\\bf u}\\thicksim {\\bf \\pi}_{\\bf W}}", //8
+"[ R({\\bf u})]",  //9
+"\\nabla_{{\\bf W}}", //10
+"J = ",
+" \\mathbb{E}", //12
+"[ R({\\bf u})\\nabla_{{\\bf W}}\\text{log}~\\pi_{{\\bf W}}({\\bf u}|{\\bf x})]" 
 ]
 
 export default class Demo extends Component {
@@ -27,19 +35,43 @@ export default class Demo extends Component {
       <div className="demo-page">
         <h3>Demo:</h3>
         
-          <h4>Policy Network for Dynamic Inference Paths</h4>
+        <h4>Policy Network for Dynamic Inference Paths</h4>
+
+        <p>
+          In contrast to this distribution:
+        </p>
+
+        <div
+            className="highlight-notation"
+            onClick={() => this.props.onQueryChange(formulas[0])}
+            ref={(ref) => this.formulas.push(ref)}>
+        </div>
+
         <p>
           Formally, given an image <b>x</b> and a pretrained ResNet with K residual blocks, we define a policy of block-dropping behavior as a K-dimensional Bernoulli distribution:
         </p>
 
         <div
-          onClick={() => this.props.onQueryChange(formulas[0])}
-          ref={(ref) => this.formulas.push(ref)}>
-        </div>
-
-        <div
+          className="highlight-notation"
           onClick={() => this.props.onQueryChange(formulas[1])}
           ref={(ref) => this.formulas.push(ref)}>
+
+        </div>
+
+        <div>
+          <span
+            ref={(ref) => this.formulas.push(ref)}>
+          </span>
+
+          <span
+            className="highlight-notation"
+            onClick={() => this.props.onQueryChange(formulas[3])}
+            ref={(ref) => this.formulas.push(ref)}>
+          </span>
+          
+          <span
+            ref={(ref) => this.formulas.push(ref)}>
+          </span>
         </div>
 
         <p>
@@ -50,9 +82,24 @@ export default class Demo extends Component {
            Finally, to learn the optimal parameters of the policy network, we maximize the following expected reward:
         </p>
 
-        <div
-          onClick={() => this.props.onQueryChange(formulas[4])}
-          ref={(ref) => this.formulas.push(ref)}>
+        <div>
+          <span
+            className="highlight-notation"
+            onClick={() => this.props.onQueryChange(formulas[7])}
+            ref={(ref) => this.formulas.push(ref)}>
+          </span>
+
+          <span
+            className="highlight-notation"
+            onClick={() => this.props.onQueryChange(formulas[8])}
+            ref={(ref) => this.formulas.push(ref)}>
+          </span>
+          
+          <span
+            className="highlight-notation"
+            onClick={() => this.props.onQueryChange(formulas[9])}
+            ref={(ref) => this.formulas.push(ref)}>
+          </span>
         </div>
 
         <p>
@@ -66,10 +113,28 @@ export default class Demo extends Component {
           To maximize Eqn.4,  we utilize policy gradient[46], one of the seminal policy search methods[9], to compute the gradients of J. In contrast to typical reinforcement learning methods where policies are sampled from a multinomial distribution[46],  our policies are generated from a K-dimensional Bernoulli distribution. The gradients can be derived similarly as:
         </p>
 
-        <div
-          onClick={() => this.props.onQueryChange(formulas[5])}
-          ref={(ref) => this.formulas.push(ref)}>
+        <div>
+          <span
+            className="highlight-notation"
+            onClick={() => this.props.onQueryChange(formulas[10])}
+            ref={(ref) => this.formulas.push(ref)}>
+          </span>
+
+          <span
+            ref={(ref) => this.formulas.push(ref)}>
+          </span>
+
+          <span
+            className="highlight-notation"
+            onClick={() => this.props.onQueryChange(formulas[12])}
+            ref={(ref) => this.formulas.push(ref)}>
+          </span>
+
+          <span
+              ref={(ref) => this.formulas.push(ref)}>
+          </span>
         </div>
+
 
         <p>
           <b>Curriculum learning</b>. 

@@ -9,21 +9,22 @@ const demo = {
 }
 */}
 
-
+//const def_formulas = []
 
 export default class Definition extends Component {
 
 	render() {
 		const demo = this.props.payload
-		
+
 		var symbolName = demo.symbolName
 		var definition = demo.definition
 		var inText = demo.inText
-		var position = demo.position			
+		var position = demo.position
+
 		return (
 			<div>
 				<h5>Definition:</h5> 
-				<p>{symbolName} </p>
+				<p>{symbolName} </p>	
 				<p>{definition}</p> 
 				<p>{(inText)? (position):''}</p>
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+{/*
 const demo1 = {
 	symbolName: '\Pi',
 	equation: 'log(x)',
@@ -17,13 +18,17 @@ const demo = {
     {id: "mu", rule: {min: "-100.0", max: "100.0", exclude: ["0"]}}
   ]
 }
+*/}
 
+const demo = {};
 
 export default class Visualization extends Component {
 	constructor(props) {
   		super(props);
 
   		this.state = {};
+
+      demo = this.props.payload
 
       for (i=0;i<demo.variable.length;i++){
         this.state[demo.variable[i].id] = '1' //initial value of all variable is 1
