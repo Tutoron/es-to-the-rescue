@@ -3,3 +3,4 @@
 /demo/node_modules
 /virenv
 /node_modules
+/server/apis/__pycache__

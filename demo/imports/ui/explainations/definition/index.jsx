@@ -1,17 +1,15 @@
 import React, { Component } from 'react'
 
-{/*
-const demo = {
-	symbolName: '\Pi',
-	definition: 'some definition',
-	inText: true,
-	position: []
-}
-*/}
-
-//const def_formulas = []
-
 export default class Definition extends Component {
+	constructor(props) {
+		super(props)
+		this.notationRef = null
+		this.tex = window.katex
+	}
+
+	componentDidMount() {
+		this.tex.render(this.props.payload.symbolName, this.notationRef)
+	}
 
 	render() {
 		const demo = this.props.payload
@@ -25,9 +23,10 @@ export default class Definition extends Component {
 
 		return (
 			<div>
-				<h5>Definition:</h5> 
-				<p>{symbolName} </p>	
-				<p>{definition}</p> 
+				<h5>Definition:</h5>
+				<div ref={(ref) => this.notationRef = ref}></div>
+				<p>{symbolName} </p>
+				<p>{definition}</p>
 				<p>{(inText)? (position):''}</p>
 
 			</div>
@@ -36,4 +35,3 @@ export default class Definition extends Component {
 
 
 }
-

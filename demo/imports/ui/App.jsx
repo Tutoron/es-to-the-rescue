@@ -52,7 +52,7 @@ export default class App extends Component {
 				<div className="col-4 main-page-sidebar">
 					{this.state.status === "loading" ? (
 						<div className="progress-sidebar">
-							<p>Loading explainations ... </p>
+							<p>Loading explanations ... </p>
 							<div className="progress">
 								<div
 									className="progress-bar progress-bar-striped progress-bar-animated"
